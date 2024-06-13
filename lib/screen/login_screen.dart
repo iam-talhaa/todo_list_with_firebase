@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:to_do_app_using_flutter_firebase/screen/signup_screen.dart';
 import 'package:to_do_app_using_flutter_firebase/screen/taskList_screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -84,7 +85,10 @@ class _LoginScreenState extends State<LoginScreen> {
             children: [
               Text('NOT Resgister yet?'),
               TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => signup_screen()));
+                  },
                   child: Text(
                     'Sign UP',
                     style: TextStyle(color: Colors.blue),

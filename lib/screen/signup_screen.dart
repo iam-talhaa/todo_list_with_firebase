@@ -25,7 +25,23 @@ class _signup_screenState extends State<signup_screen> {
             padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
             child: TextFormField(
               decoration: InputDecoration(
-                  hintText: "Enter your Email",
+                  hintText: "FUll NAME ",
+                  prefixIcon: Icon(Icons.person),
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide(width: 2),
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(width: 2),
+                    borderRadius: BorderRadius.circular(15),
+                  )),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+            child: TextFormField(
+              decoration: InputDecoration(
+                  hintText: "Email",
                   prefixIcon: Icon(Icons.mail),
                   border: OutlineInputBorder(
                     borderSide: BorderSide(width: 2),
@@ -59,24 +75,7 @@ class _signup_screenState extends State<signup_screen> {
             child: TextFormField(
               obscureText: true,
               decoration: InputDecoration(
-                  hintText: "Password",
-                  prefixIcon: Icon(Icons.lock),
-                  border: OutlineInputBorder(
-                    borderSide: BorderSide(width: 2),
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(width: 2),
-                    borderRadius: BorderRadius.circular(15),
-                  )),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-            child: TextFormField(
-              obscureText: true,
-              decoration: InputDecoration(
-                  hintText: "Password",
+                  hintText: "Confirm Password",
                   prefixIcon: Icon(Icons.lock),
                   border: OutlineInputBorder(
                     borderSide: BorderSide(width: 2),
@@ -98,7 +97,7 @@ class _signup_screenState extends State<signup_screen> {
                   borderRadius: BorderRadius.circular(20)),
               child: Center(
                   child: Text(
-                'LOGIN',
+                'REGISTER',
                 style:
                     TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
               )),
@@ -107,18 +106,6 @@ class _signup_screenState extends State<signup_screen> {
           SizedBox(
             height: 10,
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text('NOT Resgister yet?'),
-              TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    'Sign UP',
-                    style: TextStyle(color: Colors.blue),
-                  ))
-            ],
-          )
         ],
       ),
     );
