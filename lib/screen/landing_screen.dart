@@ -13,9 +13,16 @@ class _landingScreenState extends State<landingScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          FlutterLogo(
-            size: 50,
+          Center(
+            child: FlutterLogo(
+              size: 200,
+            ),
+          ),
+          SizedBox(
+            height: 50,
           ),
           TextButton(
               onPressed: () {
