@@ -8,6 +8,10 @@ class signup_screen extends StatefulWidget {
 }
 
 class _signup_screenState extends State<signup_screen> {
+  var FullNameController = TextEditingController();
+  var EmailController = TextEditingController();
+  var PasswordController = TextEditingController();
+  var ConfirmPasswordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,6 +28,7 @@ class _signup_screenState extends State<signup_screen> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
             child: TextFormField(
+              controller: FullNameController,
               decoration: InputDecoration(
                   hintText: "FUll NAME ",
                   prefixIcon: Icon(Icons.person),
@@ -40,6 +45,7 @@ class _signup_screenState extends State<signup_screen> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
             child: TextFormField(
+              controller: EmailController,
               decoration: InputDecoration(
                   hintText: "Email",
                   prefixIcon: Icon(Icons.mail),
@@ -56,6 +62,7 @@ class _signup_screenState extends State<signup_screen> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
             child: TextFormField(
+              controller: PasswordController,
               obscureText: true,
               decoration: InputDecoration(
                   hintText: "Password",
@@ -73,6 +80,7 @@ class _signup_screenState extends State<signup_screen> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
             child: TextFormField(
+              controller: ConfirmPasswordController,
               obscureText: true,
               decoration: InputDecoration(
                   hintText: "Confirm Password",
@@ -88,7 +96,28 @@ class _signup_screenState extends State<signup_screen> {
             ),
           ),
           GestureDetector(
-            onTap: () {},
+            onTap: () {
+              var fullname = FullNameController.text.trim();
+              var email = EmailController.text.trim();
+              var password = PasswordController.text.trim();
+              var confirmPassword = ConfirmPasswordController.text.trim();
+
+              if (fullname.isEmpty ||
+                  email.isEmpty ||
+                  password.isEmpty ||
+                  confirmPassword.isEmpty) {
+                //Error  toast
+                return;
+              }
+              if (password != confirmPassword) {
+                //Error toast
+              }
+              if (password.length < 6) {
+                //Error Toast
+
+                return;
+              }
+            },
             child: Container(
               height: 40,
               width: 100,

@@ -14,6 +14,8 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
+    var EmailController = TextEditingController();
+    var PasswordController = TextEditingController();
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -28,6 +30,7 @@ class _LoginScreenState extends State<LoginScreen> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
             child: TextFormField(
+              controller: EmailController,
               decoration: InputDecoration(
                   hintText: "Enter your Email",
                   prefixIcon: Icon(Icons.mail),
@@ -44,6 +47,7 @@ class _LoginScreenState extends State<LoginScreen> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
             child: TextFormField(
+              controller: PasswordController,
               obscureText: true,
               decoration: InputDecoration(
                   hintText: "Password",
@@ -60,6 +64,15 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
           GestureDetector(
             onTap: () {
+              var email = EmailController.text.trim();
+              var password = PasswordController.text.trim();
+              if (email.isEmpty || password.isEmpty) {
+                //Error  toast
+                return;
+              }
+
+              //request to firebase authentication
+
               Navigator.of(context).push(
                   MaterialPageRoute(builder: (context) => taskListScreen()));
             },
