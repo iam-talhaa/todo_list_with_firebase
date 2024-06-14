@@ -64,12 +64,12 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
           GestureDetector(
             onTap: () {
-              var email = EmailController.text.trim();
-              var password = PasswordController.text.trim();
-              if (email.isEmpty || password.isEmpty) {
-                //Error  toast
-                return;
-              }
+              // var email = EmailController.text.trim();
+              // var password = PasswordController.text.trim();
+              // if (email.isEmpty || password.isEmpty) {
+              //   //Error  toast
+              //   return;
+              // }
 
               //request to firebase authentication
 
